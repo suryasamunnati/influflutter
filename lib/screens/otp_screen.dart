@@ -85,16 +85,17 @@ class _OtpScreenState extends State<OtpScreen> {
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => RegisterScreen(
-              userData: userData,
-              accessToken: accessToken,
-            ),
+            builder:
+                (context) => RegisterScreen(
+                  userData: userData,
+                  accessToken: accessToken,
+                ),
           ),
         );
       } else {
         // Include the access token in userData
         userData['accessToken'] = accessToken;
-        
+
         // Navigate to home screen for existing users
         Navigator.pushReplacement(
           context,

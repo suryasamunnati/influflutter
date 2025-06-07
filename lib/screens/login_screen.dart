@@ -42,22 +42,23 @@ class _LoginScreenState extends State<LoginScreen> {
       try {
         final response = await _apiService.sendOtp(_phoneController.text);
         if (!mounted) return;
-        
+
         // Navigate to OTP screen
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => OtpScreen(
-              phoneNumber: _phoneController.text,
-              expiresAt: response['expiresAt'],
-            ),
+            builder:
+                (context) => OtpScreen(
+                  phoneNumber: _phoneController.text,
+                  expiresAt: response['expiresAt'],
+                ),
           ),
         );
       } catch (e) {
         if (!mounted) return;
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(e.toString())),
-        );
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text(e.toString())));
       } finally {
         if (mounted) {
           setState(() {

@@ -64,7 +64,7 @@ class HomePage extends StatelessWidget {
                     children: [
                       // Stack of profile images
                       SizedBox(
-                        width: 180, // Fixed width for the stack container
+                        width: 150, // Fixed width for the stack container
                         height: 40,
                         child: Stack(
                           clipBehavior: Clip.none,
@@ -332,6 +332,7 @@ class HomePage extends StatelessWidget {
                     ),
                     const SizedBox(height: 16),
                     CustomButton(text: "Refer Now", onPressed: () {}),
+                    SizedBox(height: 40),
                   ],
                 ),
               ),

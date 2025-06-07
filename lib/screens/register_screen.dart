@@ -120,10 +120,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => UsernameScreen(
-              userData: response['user'],
-              accessToken: widget.accessToken,
-            ),
+            builder:
+                (context) => UsernameScreen(
+                  userData: response['user'],
+                  accessToken: widget.accessToken,
+                ),
           ),
         );
       } catch (e) {
